@@ -1,0 +1,5 @@
+Oct 2
+Created the class agents with functions to define new neighbors and to calculate attraction, repulsion, and orientation
+create agents in a seperate file and first calculate the new posision, then udpated the agents position value
+added main function
+still needs to deal with nan errors
