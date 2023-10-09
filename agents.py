@@ -48,10 +48,13 @@ class Agent:
     
     def calculate_attraction(self):
         attraction_factor = [math.dist(agent.c, self.c) for agent in self.neighbors]
-        final_sum = sum(attraction_factor)
-        
-        Ua = final_sum/np.linalg.norm(final_sum)
-        return Ua
+        try:
+            norm = np.linalg.norm(attraction_factor)
+            Ua = attraction_factor/norm
+            return Ua
+        except RuntimeWarning as e:
+            print("Norm is weird")
+            
     
     def calculate_orientation(self):
         orientation_factor = sum([agent.direction for agent in self.neighbors])
@@ -65,8 +68,6 @@ class Agent:
         Ur = -1 * repulsion_factor
         return Ur
     
-        
-if __name__ == '__main__':
-    agent = Agent(10, 20)
-     
+    
+
     

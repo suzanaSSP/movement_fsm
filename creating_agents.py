@@ -3,7 +3,7 @@ import random
 
 min_value = 0
 max_value = 100
-num_agents = 40
+num_agents = 10
 
 
 def create_agent(seed):
@@ -30,4 +30,6 @@ def create_x_y_values(agents):
 
 if __name__ == "__main__":
     agents = create_agent(42)
+    
     calculate_new_agent_positions(agents)
+    
